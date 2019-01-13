@@ -1,4 +1,4 @@
-# graphql-ruby
+# GraphQL Ruby - Practice
 
 ## Installation
 
