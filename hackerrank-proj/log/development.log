@@ -230,3 +230,95 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/graphiql" for 127.0.0.1 at 2019-01-13 20:24:07 -0500
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/rohailkabani/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/rohailkabani/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (23.5ms)
+Completed 200 OK in 44ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-13 20:24:07 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n  query IntrospectionQuery {\n    __schema {\n      queryType { name }\n      mutationType { name }\n      subscriptionType { name }\n      types {\n        ...FullType\n      }\n      directives {\n        name\n        description\n        locations\n        args {\n          ...InputValue\n        }\n      }\n    }\n  }\n\n  fragment FullType on __Type {\n    kind\n    name\n    description\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n\n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n\n  fragment TypeRef on __Type {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n", "graphql"=>{"query"=>"\n  query IntrospectionQuery {\n    __schema {\n      queryType { name }\n      mutationType { name }\n      subscriptionType { name }\n      types {\n        ...FullType\n      }\n      directives {\n        name\n        description\n        locations\n        args {\n          ...InputValue\n        }\n      }\n    }\n  }\n\n  fragment FullType on __Type {\n    kind\n    name\n    description\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n\n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n\n  fragment TypeRef on __Type {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/rohailkabani/Desktop/graphql-ruby/hackerrank-proj/app/graphql/resolvers/create_link.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+            url: args[:url]
+            ^~~
+/Users/rohailkabani/Desktop/graphql-ruby/hackerrank-proj/app/graphql/resolvers/create_link.rb:11: syntax error, unexpected ')', expecting keyword_end
+        )
+        ^):
+  
+app/graphql/resolvers/create_link.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/graphql/resolvers/create_link.rb:11: syntax error, unexpected ')', expecting keyword_end
+app/graphql/types/mutation_type.rb:4:in `block in <main>'
+app/graphql/hackerrank_proj_schema.rb:1:in `<main>'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started GET "/graphiql" for 127.0.0.1 at 2019-01-13 20:24:48 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rohailkabani/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/rohailkabani/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/rohailkabani/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.4.4/app/views/graphiql/rails/editors/show.html.erb (254.8ms)
+Completed 200 OK in 283ms (Views: 271.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-13 20:24:48 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n  query IntrospectionQuery {\n    __schema {\n      queryType { name }\n      mutationType { name }\n      subscriptionType { name }\n      types {\n        ...FullType\n      }\n      directives {\n        name\n        description\n        locations\n        args {\n          ...InputValue\n        }\n      }\n    }\n  }\n\n  fragment FullType on __Type {\n    kind\n    name\n    description\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n\n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n\n  fragment TypeRef on __Type {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n", "graphql"=>{"query"=>"\n  query IntrospectionQuery {\n    __schema {\n      queryType { name }\n      mutationType { name }\n      subscriptionType { name }\n      types {\n        ...FullType\n      }\n      directives {\n        name\n        description\n        locations\n        args {\n          ...InputValue\n        }\n      }\n    }\n  }\n\n  fragment FullType on __Type {\n    kind\n    name\n    description\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n\n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n\n  fragment TypeRef on __Type {\n    kind\n    name\n    ofType {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/rohailkabani/Desktop/graphql-ruby/hackerrank-proj/app/graphql/resolvers/create_link.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+            url: args[:url]
+            ^~~
+/Users/rohailkabani/Desktop/graphql-ruby/hackerrank-proj/app/graphql/resolvers/create_link.rb:11: syntax error, unexpected ')', expecting keyword_end
+        )
+        ^):
+  
+app/graphql/resolvers/create_link.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/graphql/resolvers/create_link.rb:11: syntax error, unexpected ')', expecting keyword_end
+app/graphql/types/mutation_type.rb:4:in `block in <main>'
+app/graphql/hackerrank_proj_schema.rb:1:in `<main>'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2019-01-13 20:25:59 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\nmutation {\n  createLink (\n    url: \"google.com\",\n    description:\"Best search engine in the world!\"\n  ) { \n  \turl\n    description\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"\nmutation {\n  createLink (\n    url: \"google.com\",\n    description:\"Best search engine in the world!\"\n  ) { \n  \turl\n    description\n  }\n}", "variables"=>nil}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Types::MutationType, expected /Users/rohailkabani/Desktop/graphql-ruby/hackerrank-proj/app/graphql/types/mutation_type.rb to define it):
+  
+app/graphql/hackerrank_proj_schema.rb:2:in `block in <main>'
+app/graphql/hackerrank_proj_schema.rb:1:in `<main>'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2019-01-13 20:26:45 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\nmutation {\n  createLink (\n    url: \"google.com\",\n    description:\"Best search engine in the world!\"\n  ) { \n  \turl\n    description\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"\nmutation {\n  createLink (\n    url: \"google.com\",\n    description:\"Best search engine in the world!\"\n  ) { \n  \turl\n    description\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/resolvers/create_link.rb:8
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "google.com"], ["description", "Best search engine in the world!"], ["created_at", "2019-01-14 01:26:45.270343"], ["updated_at", "2019-01-14 01:26:45.270343"]]
+  ↳ app/graphql/resolvers/create_link.rb:8
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/resolvers/create_link.rb:8
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-13 20:27:04 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\nmutation {\n  createLink (\n    url: \"google.com\",\n    description:\"Best search engine in the world!\"\n  ) { \n    id\n  \turl\n    description\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"\nmutation {\n  createLink (\n    url: \"google.com\",\n    description:\"Best search engine in the world!\"\n  ) { \n    id\n  \turl\n    description\n  }\n}", "variables"=>nil}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/resolvers/create_link.rb:8
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "google.com"], ["description", "Best search engine in the world!"], ["created_at", "2019-01-14 01:27:04.608285"], ["updated_at", "2019-01-14 01:27:04.608285"]]
+  ↳ app/graphql/resolvers/create_link.rb:8
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/resolvers/create_link.rb:8
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
